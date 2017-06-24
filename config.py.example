@@ -1,0 +1,9 @@
+# Personality Insights credentials and URL
+#
+# You can obtain these credentials by binding a PI service to an application in bluemix and
+# and clicking the "show credentials" link on the service in the application dashboard.
+# Or you can use "cf env <application name>" from the command line to get the credentials.
+
+pi_url = ''
+pi_username = ''
+pi_password = ''
