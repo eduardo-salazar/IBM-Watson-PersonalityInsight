@@ -9,26 +9,38 @@ class Tweet:
         self.created_at = created_at
         self.lang = lang
 
+    @property
     def name(self):
         return self.name
 
+    @property
     def userId(self):
         return self.userId
 
+    @property
     def tweetId(self):
         return self.tweetId
 
+    @property
     def alias(self):
         return self.alias
 
+    @property
     def text(self):
         return self.text
 
+    @text.setter
+    def text(self,value):
+        return self.text = value
+
+    @property
     def created_at(self):
         return self.created_at
 
+    @property
     def lang(self):
         return self.lang
+
 
 
     def toJSON(tweet):
