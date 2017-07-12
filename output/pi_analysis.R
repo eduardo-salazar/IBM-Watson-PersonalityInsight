@@ -1,12 +1,13 @@
 #Install Packaged
 install.packages("readr")
 install.packages('plyr')
+install.packages('dplyr')
 
 #Import Packaged
 library(readr)
 library(ggplot2)
 library(plyr)
-
+library(dplyr)
 # Import file
 pi <- read_csv("/Users/eduardosalazar/Documents/apps/watson/output/pi_target_user.csv")
 
@@ -33,6 +34,16 @@ ggplot(data.frame(pi), aes(x=tweets_cat)) +
 
 result.tweets_by_group <- aggregate(rep(1, length(paste0(pi$tweets_cat))),
                              by=list(pi$tweets_cat), sum)
-result.tweets_by_group
 colnames(result.tweets_by_group) <- c("#tweets","count")
+result.tweets_by_group
+
+
+# check tweets of category grater than 5000 
+# Taking a sample of 10 users from 500 
+sample_rows1 <- nrow(pi[pi$tweets_cat == 5000,])
+pi[sample(sample_rows1,10),]
+# Sample for range of 10000 - 15000
+sample_rows2 <- nrow(pi[pi$tweets_cat == 10000,])
+pi[sample(sample_rows2,10),]
+
 
