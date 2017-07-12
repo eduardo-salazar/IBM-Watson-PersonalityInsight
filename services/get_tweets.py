@@ -30,10 +30,10 @@ class GetTweets:
             doc['user']['id'],
             doc['user']['name'],
             doc['user']['screen_name'],
-            dos['user']['description'],
+            doc['user']['description'],
             doc['text'],
             doc['created_at'],
             doc['lang'],
-            doc['place']['country_code'],
-            doc['place']['country']))
+            doc['place']['country_code'] if 'place' in doc else "",
+            doc['place']['country'] if 'place' in doc else ""))
         return result
