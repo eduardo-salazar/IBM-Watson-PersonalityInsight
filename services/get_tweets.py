@@ -21,7 +21,7 @@ class GetTweets:
         return result
 
     def get_tweets_from(self, user):
-        elements = self.db.tweets_en.find({'user.id': user},{"user.id":1,"user.name":1,"user.screen_name":1,"place.name":1,"place.full_name":1,"place.country_code":1,"place.country":1,"lang":1,"created_at":1,"id":1,"text":1})
+        elements = self.db.tweets_en.find({'user.id': user},{"user.id":1,"user.description":1,"user.name":1,"user.screen_name":1,"place.name":1,"place.full_name":1,"place.country_code":1,"place.country":1,"lang":1,"created_at":1,"id":1,"text":1})
         #Convert to Tweet Object
         result = []
         for doc in elements:
@@ -30,7 +30,10 @@ class GetTweets:
             doc['user']['id'],
             doc['user']['name'],
             doc['user']['screen_name'],
+            dos['user']['description'],
             doc['text'],
             doc['created_at'],
-            doc['lang']))
+            doc['lang'],
+            doc['place']['country_code'],
+            doc['place']['country']))
         return result
