@@ -1,0 +1,9 @@
+---
+title: "Predicting Personality Trait"
+output: html_notebook
+---
+# Data Available
+Previusly we ran a script to extract Text from a db 
+
+# Goal
+Predict Personality Traits 

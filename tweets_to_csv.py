@@ -7,7 +7,7 @@ tweets_helper = tweetsHelper.GetTweets()
 # target_users = tweets_helper.get_target_users()
 
 target_users = []
-target_users.append(497145453)
+target_users.append(2457185017)
 
 
 for index, user in enumerate(target_users):
